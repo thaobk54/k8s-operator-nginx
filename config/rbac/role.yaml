@@ -1,0 +1,33 @@
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  creationTimestamp: null
+  name: manager-role
+rules:
+- apiGroups:
+  - tutorials.minhlt
+  resources:
+  - ovhnginxes
+  verbs:
+  - create
+  - delete
+  - get
+  - list
+  - patch
+  - update
+  - watch
+- apiGroups:
+  - tutorials.minhlt
+  resources:
+  - ovhnginxes/finalizers
+  verbs:
+  - update
+- apiGroups:
+  - tutorials.minhlt
+  resources:
+  - ovhnginxes/status
+  verbs:
+  - get
+  - patch
+  - update
